@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Chosen Palette: Canada Life Red & White -->
+    <!-- Application Structure Plan: A single-page, scrollable infographic narrative. The structure guides the user from the "why" (AI's importance), to "what" (core concepts), "how" (role-specific impact and prompt engineering), "rules" (responsible AI), and finally "when" (the roadmap). This thematic flow is more engaging for exploration than a rigid slide-by-slide structure, using interactive charts and visual layouts to tell a cohesive story. -->
+    <!-- Visualization & Content Choices: 
+        - Slide 4 (Role Impact) -> Goal: Compare -> Viz: Horizontal Bar Chart (Chart.js) -> Justification: Best for comparing a few categories (roles) against a conceptual metric (efficiency).
+        - Slide 6 (Responsible AI) -> Goal: Inform (Composition) -> Viz: Donut Chart (Chart.js) -> Justification: Ideal for showing four equal parts of a whole framework.
+        - Slide 7 (Roadmap) -> Goal: Organize (Process) -> Viz: HTML/CSS Timeline -> Justification: A custom visual timeline is more engaging than a list and avoids prohibited libraries.
+        - Slide 5 (Prompting) -> Goal: Organize (Process) -> Viz: HTML/CSS Flow Diagram -> Justification: Simple flexbox layout clearly shows the prompt sequence without prohibited libraries.
+    -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <title>The AI Advantage: L&D Roadmap</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: #f8fafc;
+      }
+      .brand-red {
+        color: #e0032b;
+      }
+      .bg-brand-red {
+        background-color: #e0032b;
+      }
+      .border-brand-red {
+        border-color: #e0032b;
+      }
+      .chart-container {
+        position: relative;
+        width: 100%;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+        height: 300px;
+        max-height: 400px;
+      }
+      @media (min-width: 768px) {
+        .chart-container {
+          height: 350px;
+        }
+      }
+    </style>
+  </head>
+  <body class="antialiased text-slate-700">
+    <div class="container mx-auto p-4 md:p-8 max-w-5xl">
+      <header class="text-center my-12">
+        <h1 class="text-4xl md:text-6xl font-black brand-red tracking-tight">
+          The AI Advantage
+        </h1>
+        <p class="mt-4 text-lg md:text-xl text-slate-600">
+          Our Roadmap for an Intelligent L&D Future at Canada Life
+        </p>
+      </header>
+
+      <section id="why-ai" class="my-16">
+        <div
+          class="bg-white p-8 rounded-2xl shadow-lg border border-slate-200 text-center"
+        >
+          <h2 class="text-3xl font-bold text-slate-800">
+            The AI Shift: From Optional to Essential
+          </h2>
+          <p class="mt-4 max-w-3xl mx-auto text-lg">
+            AI is no longer a futuristic concept; it's a present-day reality
+            that empowers us to work smarter, faster, and more creatively. This
+            roadmap outlines how we will leverage AI to amplify our impact,
+            transforming our processes and enhancing our creative output.
+          </p>
+          <div
+            class="mt-8 flex flex-col md:flex-row items-center justify-center gap-4 text-slate-600 font-semibold text-lg"
+          >
+            <div class="p-4 border-2 border-dashed border-slate-300 rounded-lg">
+              Traditional Workflow
+            </div>
+            <div class="text-2xl font-bold brand-red">→</div>
+            <div
+              class="p-4 bg-red-100 border-2 border-brand-red rounded-lg text-brand-red"
+            >
+              AI-Accelerated Workflow
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="concepts" class="my-16">
+        <h2 class="text-3xl font-bold text-center text-slate-800 mb-8">
+          Decoding AI: The Foundational Concepts
+        </h2>
+        <p class="text-center text-lg text-slate-600 mb-12 max-w-3xl mx-auto">
+          To effectively use AI, it's important to understand the core
+          technologies that power it. These three concepts are the building
+          blocks of the tools we'll be adopting, from analytics to content
+          creation.
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div
+            class="bg-white p-6 rounded-2xl shadow-md border border-slate-200"
+          >
+            <div class="text-4xl">🧠</div>
+            <h3 class="text-xl font-bold mt-4 text-slate-800">
+              Machine Learning
+            </h3>
+            <p class="mt-2">
+              The engine of AI. It's the core idea of computers learning from
+              data to recognize patterns and make predictions without being
+              explicitly programmed for every task.
+            </p>
+          </div>
+          <div
+            class="bg-white p-6 rounded-2xl shadow-md border border-slate-200"
+          >
+            <div class="text-4xl">✨</div>
+            <h3 class="text-xl font-bold mt-4 text-slate-800">Generative AI</h3>
+            <p class="mt-2">
+              The creative partner. This is a subset of AI that creates new,
+              original content—from text and code to images. It's the technology
+              that powers tools like Microsoft Copilot.
+            </p>
+          </div>
+          <div
+            class="bg-white p-6 rounded-2xl shadow-md border border-slate-200"
+          >
+            <div class="text-4xl">📊</div>
+            <h3 class="text-xl font-bold mt-4 text-slate-800">
+              Structured vs. Unstructured Data
+            </h3>
+            <p class="mt-2">
+              The fuel for AI. AI processes both organized data from
+              spreadsheets (structured) and complex information from documents
+              or videos (unstructured) to find insights.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="use-cases" class="my-16">
+        <h2 class="text-3xl font-bold text-center text-slate-800 mb-2">
+          AI in Your Daily Workflow
+        </h2>
+        <p class="text-center text-lg text-slate-600 mb-8 max-w-3xl mx-auto">
+          AI offers a significant efficiency boost across all L&D roles. The bar
+          chart below illustrates the conceptual impact on key tasks for each
+          role, showing where AI can help automate, generate, and analyze,
+          freeing up more time for high-value strategic work.
+        </p>
+        <div class="bg-white p-8 rounded-2xl shadow-lg border border-slate-200">
+          <div class="chart-container">
+            <canvas id="roleImpactChart"></canvas>
+          </div>
+        </div>
+      </section>
+
+      <section id="prompting" class="my-16">
+        <h2 class="text-3xl font-bold text-center text-slate-800 mb-8">
+          Mastering the Conversation: The Art of the Prompt
+        </h2>
+        <div class="bg-white p-8 rounded-2xl shadow-lg border border-slate-200">
+          <p class="text-center text-lg mb-8 max-w-3xl mx-auto">
+            Prompt engineering is the key to unlocking AI's potential. It's the
+            skill of crafting clear, specific instructions to get the best
+            possible output. A great prompt includes four key elements, which
+            guide the AI to deliver precisely what you need.
+          </p>
+          <div
+            class="flex flex-col md:flex-row items-stretch justify-between gap-4 text-center text-slate-800"
+          >
+            <div
+              class="flex-1 p-4 bg-slate-100 rounded-lg flex flex-col items-center justify-center"
+            >
+              <div class="text-2xl font-bold">1. Role</div>
+              <p>Tell the AI who to be. "Act as an expert..."</p>
+            </div>
+            <div class="text-2xl font-bold text-slate-300 self-center">→</div>
+            <div
+              class="flex-1 p-4 bg-slate-100 rounded-lg flex flex-col items-center justify-center"
+            >
+              <div class="text-2xl font-bold">2. Task</div>
+              <p>State what you want. "Draft an email..."</p>
+            </div>
+            <div class="text-2xl font-bold text-slate-300 self-center">→</div>
+            <div
+              class="flex-1 p-4 bg-slate-100 rounded-lg flex flex-col items-center justify-center"
+            >
+              <div class="text-2xl font-bold">3. Context</div>
+              <p>Provide background. "For an audience of..."</p>
+            </div>
+            <div class="text-2xl font-bold text-slate-300 self-center">→</div>
+            <div
+              class="flex-1 p-4 bg-slate-100 rounded-lg flex flex-col items-center justify-center"
+            >
+              <div class="text-2xl font-bold">4. Format</div>
+              <p>Specify the output. "In a bulleted list..."</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="responsible-ai" class="my-16">
+        <h2 class="text-3xl font-bold text-center text-slate-800 mb-2">
+          Our Guiding Principles for Responsible AI
+        </h2>
+        <p class="text-center text-lg text-slate-600 mb-8 max-w-3xl mx-auto">
+          As we adopt these powerful tools, our commitment to quality and
+          security is paramount. The donut chart below represents our framework
+          for responsible AI, built on four equally important pillars that must
+          guide every interaction with these technologies.
+        </p>
+        <div class="bg-white p-8 rounded-2xl shadow-lg border border-slate-200">
+          <div class="chart-container">
+            <canvas id="responsibleAiChart"></canvas>
+          </div>
+        </div>
+      </section>
+
+      <section id="roadmap" class="my-16">
+        <h2 class="text-3xl font-bold text-center text-slate-800 mb-12">
+          Our Journey Begins: A 4-Week Implementation Roadmap
+        </h2>
+        <div class="relative max-w-2xl mx-auto">
+          <div
+            class="border-l-4 border-brand-red absolute h-full top-0 left-4"
+          ></div>
+          <div class="pl-12 mb-10">
+            <div
+              class="bg-brand-red text-white w-8 h-8 rounded-full flex items-center justify-center absolute -left-4 font-bold"
+            >
+              1
+            </div>
+            <h3 class="text-xl font-bold text-slate-800">
+              Week 1: Foundations
+            </h3>
+            <p class="mt-1">
+              Attend this kickoff presentation, create accounts on our
+              designated AI tools, and begin initial exploration of their
+              features and capabilities.
+            </p>
+          </div>
+          <div class="pl-12 mb-10">
+            <div
+              class="bg-brand-red text-white w-8 h-8 rounded-full flex items-center justify-center absolute -left-4 font-bold"
+            >
+              2
+            </div>
+            <h3 class="text-xl font-bold text-slate-800">
+              Week 2: Role-Specific Practice
+            </h3>
+            <p class="mt-1">
+              Focus on practical application. IDs will practice generating
+              outlines, Facilitators will create icebreakers, and LRMs will
+              draft project updates using AI.
+            </p>
+          </div>
+          <div class="pl-12 mb-10">
+            <div
+              class="bg-brand-red text-white w-8 h-8 rounded-full flex items-center justify-center absolute -left-4 font-bold"
+            >
+              3
+            </div>
+            <h3 class="text-xl font-bold text-slate-800">
+              Week 3: Share & Learn
+            </h3>
+            <p class="mt-1">
+              A dedicated team meeting to share successes, challenges, and best
+              practices. We will collaborate on refining our prompt engineering
+              skills together.
+            </p>
+          </div>
+          <div class="pl-12">
+            <div
+              class="bg-brand-red text-white w-8 h-8 rounded-full flex items-center justify-center absolute -left-4 font-bold"
+            >
+              4
+            </div>
+            <h3 class="text-xl font-bold text-slate-800">
+              Week 4: Integration
+            </h3>
+            <p class="mt-1">
+              Identify key workflows for long-term AI integration and set goals
+              to measure improvements in efficiency, quality, and creative
+              output.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <footer class="text-center my-12 border-t border-slate-200 pt-8">
+        <h3 class="text-2xl font-bold text-slate-800">What's Next?</h3>
+        <p class="mt-2 text-lg">
+          Your action item is to log in, start experimenting, and come prepared
+          for our follow-up session to share your experiences!
+        </p>
+        <div
+          class="mt-6 text-sm text-slate-500 bg-slate-100 p-4 rounded-lg max-w-2xl mx-auto"
+        >
+          <strong>Disclaimer:</strong> All examples are illustrative. Verify all
+          Copilot outputs for compliance before publishing.
+        </div>
+        <p class="mt-4 text-sm text-slate-500">
+          Muhammad Hanif — LLM Engineer & AI L&D Professional
+        </p>
+      </footer>
+    </div>
+
+    <script>
+      function processLabels(labels) {
+        const maxLen = 16;
+        return labels.map((label) => {
+          if (label.length <= maxLen) {
+            return label;
+          }
+          const words = label.split(" ");
+          const newLabel = [];
+          let line = "";
+          words.forEach((word) => {
+            if ((line + " " + word).trim().length > maxLen && line.length > 0) {
+              newLabel.push(line.trim());
+              line = "";
+            }
+            line += word + " ";
+          });
+          newLabel.push(line.trim());
+          return newLabel;
+        });
+      }
+
+      const tooltipTitleCallback = (tooltipItems) => {
+        const item = tooltipItems[0];
+        let label = item.chart.data.labels[item.dataIndex];
+        if (Array.isArray(label)) {
+          return label.join(" ");
+        }
+        return label;
+      };
+
+      const roleImpactCtx = document
+        .getElementById("roleImpactChart")
+        .getContext("2d");
+      const roleImpactData = {
+        labels: processLabels([
+          "Instructional Designers",
+          "Facilitators",
+          "Learning Relationship Managers",
+        ]),
+        datasets: [
+          {
+            label: "Task Efficiency Boost with AI",
+            data: [75, 60, 85],
+            backgroundColor: ["#E0032B", "#FF5B5B", "#B20021"],
+            borderColor: "#ffffff",
+            borderWidth: 2,
+          },
+        ],
+      };
+      new Chart(roleImpactCtx, {
+        type: "bar",
+        data: roleImpactData,
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          indexAxis: "y",
+          scales: {
+            x: {
+              beginAtZero: true,
+              title: { display: true, text: "Conceptual Efficiency Gain (%)" },
+            },
+          },
+          plugins: {
+            legend: { display: false },
+            title: {
+              display: true,
+              text: "Role-Specific Use Cases & Potential Impact",
+              font: { size: 16 },
+            },
+            tooltip: {
+              callbacks: {
+                title: tooltipTitleCallback,
+              },
+            },
+          },
+        },
+      });
+
+      const responsibleAiCtx = document
+        .getElementById("responsibleAiChart")
+        .getContext("2d");
+      const responsibleAiData = {
+        labels: [
+          "Validation is Key",
+          "Mitigating Hallucinations",
+          "Human Oversight is Critical",
+          "Data Confidentiality First",
+        ],
+        datasets: [
+          {
+            label: "Responsible AI Pillars",
+            data: [25, 25, 25, 25],
+            backgroundColor: ["#E0032B", "#FF5B5B", "#B20021", "#8C001A"],
+            hoverOffset: 4,
+          },
+        ],
+      };
+      new Chart(responsibleAiCtx, {
+        type: "doughnut",
+        data: responsibleAiData,
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: { position: "top" },
+            title: {
+              display: true,
+              text: "Our Responsible AI Framework",
+              font: { size: 16 },
+            },
+            tooltip: {
+              callbacks: {
+                title: tooltipTitleCallback,
+              },
+            },
+          },
+        },
+      });
+    </script>
+  </body>
+</html>
